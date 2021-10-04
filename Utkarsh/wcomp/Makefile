@@ -1,6 +1,6 @@
 // make file
-output:main.o strict.o fuzzy.o pattern.o
-	gcc main.o strict.o fuzzy.o pattern.o -o output
+wcomp:main.o strict.o fuzzy.o pattern.o
+	gcc main.o strict.o fuzzy.o pattern.o -o wcomp
 
 main.o: main.c strict.h fuzzy.h pattern.h
 	gcc main.c -c
