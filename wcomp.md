@@ -37,7 +37,7 @@ For a database file _database_ that contains:
 wcomp -f database -s strict "This"
 ```
 <dl>
-<b>This</b> is a string.
+<b style="color:red;">This</b> is a string.
 </dl>
 
 ## _pattern_ scheme
@@ -46,8 +46,8 @@ wcomp -f database -s strict "This"
 wcomp -f database -s pattern "string"
 ```
 <dl>
-This is a <b>string</b><br>
-Another line with <b>string</b>.
+This is a <b style="color:red;">string</b><br>
+Another line with <b style="color:red;">string</b>.
 </dl>
 
 ## _fuzzy_ scheme
@@ -57,6 +57,6 @@ wcomp -f database -s fuzzy "si"
 ```
 
 <dl>
-Thi<b>s</b> <b>i</b>s a string.<br>
-Another line with <b>s</b>tr<b>i</b>ng.
+Thi<b style="color:red;">s</b> <b style="color:red;">i</b>s a string.<br>
+Another line with <b style="color:red;">s</b>tr<b style="color:red;">i</b>ng.
 </dl>
