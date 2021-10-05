@@ -36,27 +36,20 @@ For a database file _database_ that contains:
 ``` sh
 wcomp -f database -s strict "This"
 ```
-<dl>
-<b style="color:red;">This</b> is a string.
-</dl>
+`This` is a string.
 
 ## _pattern_ scheme
 
 ``` sh
 wcomp -f database -s pattern "string"
 ```
-<dl>
-This is a <b style="color:red;">string</b><br>
-Another line with <b style="color:red;">string</b>.
-</dl>
+This is a `string`.  
+Another line with `string`.
 
 ## _fuzzy_ scheme
 
 ``` sh
 wcomp -f database -s fuzzy "si"
 ```
-
-<dl>
-Thi<b style="color:red;">s</b> <b style="color:red;">i</b>s a string.<br>
-Another line with <b style="color:red;">s</b>tr<b style="color:red;">i</b>ng.
-</dl>
+Thi`s` `i`s a string.  
+Another line with `s`tr`i`ng.
