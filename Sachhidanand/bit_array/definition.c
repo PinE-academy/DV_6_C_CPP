@@ -1,18 +1,47 @@
 //Definition of functions
+typedef struct b_array
+{
+    unsigned char *array;
+    unsigned int bit;
+}b_array;
 
-void b_create(int size_t){
+b_array *b_create(size_t size){
 
-    int *array;
+    b_array *arr;
 
-    array=(int *)malloc(sizeof(int)*size_t);
+    if(size==0)
+    {
+        printf("Can allow an empty array!");
+        return NULL;
+    }
 
-    if (array==NULL)
+    arr=(b_array *)malloc(sizeof(b_array));
+
+    if (arr==NULL)
     {
         printf("Error! Try Again");
     }
-    
-    for(int i=0; i<(sizeof(array)/sizeof(array+0)); i++)
+
+    else
     {
-        scanf("%d",*(array+i));
+        arr->bit= size;
+
+        arr->array=(unsigned char *)malloc(sizeof(unsigned char)*size);
+
+        if(arr->array==NULL)
+        {
+            printf("Error!");
+            free(arr);
+            arr = NULL;
         }
+
+    return arr;
+
+    }
+
+
+
+
+    
+    
 }
