@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
         if ((!(strcmp(argv[2],"-f"))) && (!(strcmp(argv[4],"-s"))))
         {
             const char *filename = argv[3];
-            char *word = argv[6];
+            const char *word = argv[6];
 
             if (!(strcmp(argv[5],"strict")))
             {
@@ -47,4 +47,5 @@ int main(int argc, char *argv[])
         printf("Error! in entering arguments\n");
         printf("Usage : wcomp -f filename -s schema word\n");
     }
+    return 0;
 }

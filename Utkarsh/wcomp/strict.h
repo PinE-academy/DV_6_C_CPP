@@ -1,0 +1,1 @@
+char **strict_match(char *,char *);
