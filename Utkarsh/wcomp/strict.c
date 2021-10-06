@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include"strict.h"
 #define MAX_SIZE 128
 #define no_of_line 30
 
