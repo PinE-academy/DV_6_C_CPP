@@ -8,6 +8,16 @@ There are two parts of the project.
 Implementation module contains b_array.h and b_array.c  
 Driver program uses b_array.h and dems APIs from b_array.h
 
+### b_array
+b_array is the internal structure that holds bit array and meta info.
+``` c
+typedef struct b_array
+{
+    unsigned char *array;
+    unsigned int size;
+} b_array;
+```
+
 ### b_value
 b_array uses b_value enum that defines b_false and b_true.
 ``` c
@@ -20,7 +30,7 @@ enum b_value {
 ## APIs supported  
 ### _create b_array_
 ``` c
-barray b_create(size_t);
+barray* b_create(size_t);
 ```
 Creates a bit array of size given as input.
 
