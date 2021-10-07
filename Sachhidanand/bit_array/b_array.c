@@ -2,7 +2,7 @@
 typedef struct 
 {
     unsigned char *array;
-    unsigned int size;
+    unsigned int bit;
 
 }b_array;
 
@@ -25,7 +25,7 @@ b_array *b_create(size_t size){
 
     else
     {
-        arr->size = size;
+        arr->bit = size;
 
         arr->array=(unsigned char *)malloc(sizeof(unsigned char)*(((size/8)+1)));     //To get the memory for the number of character bytes we need 
 
