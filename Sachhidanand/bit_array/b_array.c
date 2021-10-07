@@ -4,7 +4,7 @@ typedef struct
     unsigned char *array;
     unsigned int bit;
 
-}b_array;
+} b_array;
 
 b_array *b_create(size_t size){
 
@@ -22,6 +22,7 @@ b_array *b_create(size_t size){
     {
         printf("Error! Try Again");
     }
+
 
     else
     {
