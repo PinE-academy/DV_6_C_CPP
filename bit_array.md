@@ -11,7 +11,7 @@ Driver program uses b_array.h and dems APIs from b_array.h
 ### b_array
 b_array is the internal structure that holds bit array and meta info.
 ``` c
-typedef struct b_array
+typedef struct
 {
     unsigned char *array;
     unsigned int size;
