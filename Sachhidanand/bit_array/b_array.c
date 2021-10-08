@@ -2,7 +2,7 @@
 typedef struct 
 {
     unsigned char *array;
-    unsigned int bit;
+    unsigned int size;
 
 } b_array;
 
@@ -28,7 +28,7 @@ b_array *b_create(size_t size){
 
     else
     {
-        arr->bit = size;
+        arr->size = size;
 
         arr->array=(unsigned char *)malloc(sizeof(unsigned char)*(((size/8)+1)));    //To get the memory for the number of character bytes we need 
 
@@ -43,14 +43,24 @@ b_array *b_create(size_t size){
 
     }  
 }
-
 void b_destroy(b_array *arr){
 
-    if (arr->array!=NULL)
-        free(arr->array);   
-    if (arr!=NULL)      
-        free(arr);
-            
+   
+    if (arr==NULL)
+    {
+        printf("\nThis is Empty");
+        return;
+    }
+    if(arr) 
+        {
+            printf("\n%d Not Empty!");
+            if (arr->array!=NULL)
+             {
+                free(arr->array);
+                }
+            free(arr);
+            printf("\nDone");
+        }
 }
 
 
