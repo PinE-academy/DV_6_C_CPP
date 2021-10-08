@@ -6,4 +6,4 @@ Driver.o: Driver.c
 	gcc -c Driver.c 
 clean:
 	rm -rf *.o P_string_output
-	rm -rf *.exe P_string_output
+	
