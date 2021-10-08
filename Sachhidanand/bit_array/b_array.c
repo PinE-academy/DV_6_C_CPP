@@ -51,7 +51,7 @@ void b_destroy(b_array *arr){
         printf("\nThis is Empty");
         return;
     }
-    if(arr) 
+    else
         {
             printf("\n%d Not Empty!");
             if (arr->array!=NULL)
