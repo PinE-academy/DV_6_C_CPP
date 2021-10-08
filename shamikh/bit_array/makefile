@@ -1,4 +1,4 @@
-demo: main.o b_array.o binary.h
+demo: main.o b_array.o 
 	gcc main.o b_array.o -o demo
 
 main.o: main.c  b_array.h
