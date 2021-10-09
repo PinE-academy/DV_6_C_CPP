@@ -1,11 +1,11 @@
-Pascal_String_Out : Pascal_Strings.o Pascal_Driver.0
-	gcc-11 Pascal_Strings.o Pascal_Driver.o -o Pascal_String_Out
+demo : main.o p_strings.0
+	gcc-11 main.o p_strings.0 -o Pascal_String_Out
 
-Pascal_Strings.o : Pascal_Strings.c
-	gcc-11 -c Pascal_Strings.c
+main.o : main.c p_strings.h
+	gcc-11 -c main.c
 
-Pascal_Driver.o : Pascal_Driver.c
-	gcc-11 -c Pascal_Driver.c
+p_strings.o : p_strings.c
+	gcc-11 -c p_strings.c
 
 clean :
-	rm -rf *.o Pascal_String_Out
+	rm -rf *.o
