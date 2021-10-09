@@ -1,5 +1,5 @@
 demo : main.o p_strings.0
-	gcc-11 main.o p_strings.0 -o Pascal_String_Out
+	gcc-11 main.o p_strings.0 -o demo
 
 main.o : main.c p_strings.h
 	gcc-11 -c main.c
