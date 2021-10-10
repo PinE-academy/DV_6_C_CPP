@@ -1,3 +1,7 @@
+//makefile
+wcomp : main.o strict.o fuzzy.o pattern.o
+
+
 gcc main.o strict.o fuzzy.o pattern.o -o output
 
 main.o: main.c strict.h fuzzy.h pattern.h 
