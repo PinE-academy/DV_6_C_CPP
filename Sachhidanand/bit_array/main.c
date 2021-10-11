@@ -1,9 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<string.h>
-#include"b_array.c"
 #include"b_array.h"
-// #include<limits.h>
+
+
 int main(){
 size_t h=24;
 
@@ -20,4 +19,5 @@ size_t h=24;
         printf("%d ",b->array[i]=63*(i+1));
     }
     
+
 }  
