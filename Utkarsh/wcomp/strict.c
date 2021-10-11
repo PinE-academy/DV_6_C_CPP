@@ -15,7 +15,7 @@ char **strict_match(char *filename, char *word)
     }
     // total line in file
     int no_of_line = countLine(filename);
-    char **match_strings = malloc(sizeof(char *) * no_of_line);
+    char **match_strings = malloc(sizeof(char *)*no_of_line);
     while (!feof(file))
     {
         char *match = malloc(sizeof(char) * (strlen(word) + 1));
@@ -42,6 +42,7 @@ char **strict_match(char *filename, char *word)
         }
         free(match);
     }
+    fclose(file);
     if (i == 0)
     {
         return NULL;
