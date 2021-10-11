@@ -39,6 +39,8 @@ b_array *b_create(size_t size){
             arr = NULL;
         }
 
+        memset(arr->array, 0 , ((size/8)+1));   //Initialising the values with 0.
+
     return arr;
 
     }  
