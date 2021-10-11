@@ -1,10 +1,6 @@
-//Definition of functions
-typedef struct 
-{
-    unsigned char *array;
-    unsigned int size;
-
-} b_array;
+#include<stdio.h>
+#include<stdlib.h>
+#include"b_array.h"
 
 b_array *b_create(size_t size){
 
@@ -64,5 +60,4 @@ void b_destroy(b_array *arr){
             printf("\nDone");
         }
 }
-
 
