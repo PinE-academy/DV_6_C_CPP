@@ -2,6 +2,10 @@
 #include<stdlib.h>
 #include"b_array.h"
 
+#define Index(bit)    ((bit) / 8)
+
+#define Pos(bit)      ((bit) % 8)
+
 b_array *b_create(size_t size){
 
     b_array *arr;
@@ -61,3 +65,23 @@ void b_destroy(b_array *arr){
         }
 }
 
+enum b_value b_get(const b_array *arr, size_t size)
+{
+    if(arr==NULL)
+    {
+        printf("Can't find bit in empty array.");
+        exit(1);
+    }   
+    
+    if(size > arr->size)
+    {
+        printf("Position Out of range");
+        exit(1);        
+    } 
+    
+    if(arr->array[Index(size)] & (1 << Pos(size)))    
+        return b_true;
+    else  
+        return b_false; 
+        
+}
