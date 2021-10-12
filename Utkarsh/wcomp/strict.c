@@ -3,19 +3,45 @@
 #include <string.h>
 #include "strict.h"
 
-char **strict_match(char *filename, char *word)
+struct Node
+{
+    char *data;
+    struct Node *next;
+};
+struct Node *head = NULL;
+int insertEnd(char *data)
+{
+    struct Node *node = (struct Node *)malloc(sizeof(struct Node));
+    node->data = data;
+    node->next = NULL;
+    if (head == NULL)
+    {
+        head = node;
+    }
+    else
+    {
+        struct Node *temp = head;
+
+        while (temp->next != NULL)
+        {
+            temp = temp->next;
+        }
+        // link at end
+        temp->next = node;
+    }
+
+    return 0;
+}
+char *strict_match(char *filename, char *word)
 {
     FILE *file;
-    int i = 0;
     file = fopen(filename, "r");
     if (file == NULL)
     {
         printf("error in loading database file");
         exit(0);
     }
-    // total line in file
-    int no_of_line = countLine(filename);
-    char **match_strings = malloc(sizeof(char *)*no_of_line);
+    head = NULL; // initalize for every call of function
     while (!feof(file))
     {
         char *match = malloc(sizeof(char) * (strlen(word) + 1));
@@ -31,26 +57,13 @@ char **strict_match(char *filename, char *word)
             char *line = malloc(sizeof(char) * (characters + 1));
             fseek(file, -characters, SEEK_CUR); //set pointer to starting of line
             fgets(line, characters + 1, file);
-            match_strings[i] = line;
-            i++;
-            if (i == no_of_line)
-            {
-                free(match);
-                free(line);
-                break;
-            }
+            insertEnd(line); //add to the linkedlist
         }
         free(match);
     }
+
     fclose(file);
-    if (i == 0)
-    {
-        return NULL;
-    }
-    else
-    {
-        return match_strings;
-    }
+    return head;
 }
 
 // get characters in line
@@ -66,27 +79,4 @@ int countCharacter(FILE *file)
             break;
     }
     return characters;
-}
-
-// get no of line
-int countLine(char *filename)
-{
-    FILE *file = fopen(filename, "r");
-    if (file == NULL)
-    {
-        printf("error !");
-        exit(0);
-    }
-    int linecount = 0;
-    char ch;
-    while ((ch = fgetc(file)) != EOF)
-    {
-        /* Check new line */
-        if (ch == '\n' || ch == '\0')
-            linecount++;
-    }
-    //last line count
-    linecount++;
-    fclose(file);
-    return linecount;
 }

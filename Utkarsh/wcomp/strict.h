@@ -1,3 +1,3 @@
-char **strict_match(char *,char *);
+char *strict_match(char *,char *);
 int countCharacter(FILE *);
-int countLine(char *);
+int insertEnd(char *);
