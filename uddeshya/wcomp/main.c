@@ -9,7 +9,7 @@ void main(int argc , const char *argv[])
   scheme = argv[4];
   word=argv[5];
   FILE *fp;
-  fp=fopen("file.txt","r");//confirm file input
+  fp=fopen(argv[2],"r");
   if(strlen(argv)>0 && strlen(argv)<7 && argv[0]=="wcomp" && argv[1]== "-f" && argv[3]== "-s")
   {
   if(scheme == "strict")
