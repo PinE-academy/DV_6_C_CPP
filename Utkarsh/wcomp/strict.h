@@ -1,3 +1,1 @@
-char *strict_match(char *,char *);
-int countCharacter(FILE *);
-int insertEnd(char *);
+struct Node *strict_match(char *,char *);
