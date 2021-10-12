@@ -13,7 +13,7 @@ Driver program uses p_strings.h and dems APIs from p_strings.h
 ## APIs supported  
 ### _create p_string_
 ``` c
-p_string p_create(size_t);
+p_string* p_create(size_t);
 ```
 Creates a p_string object and returns p_string. Takes size of string as an input. 
 
@@ -25,48 +25,48 @@ Destroys the underlying p_string object
 
 ### _read p_string_
 ``` c
-char read(const p_string*, size_t);
+char p_read(const p_string*, size_t);
 ```
 Returns a character at the ith index, asserts on illegal index
 
 ### _write p_string_
 ``` c
-void write(p_string*, char);
+void p_write(p_string*, char);
 ```
 Writes a character at the ith index, asserts on illegal index
 
 ### _string length_
 ``` c
-size_t pstrlen(const p_string *);
+size_t p_strlen(const p_string *);
 ```
 Returns length of underlying string.
 
 ### _string compare_
 ``` c
-int pstrcmp(const p_string *, const p_string *);
+int p_strcmp(const p_string *, const p_string *);
 ```
 Compare 2 p_string and returns -1, 0, 1 similar to strcmp().
 
 ### _string concatenation_
 ``` c
-p_string* pstrcat(p_string *, const p_string *);
+p_string* p_strcat(p_string *, const p_string *);
 ```
 Concatenate string2 into string1, like strcat(), and returns modified p_string
 
 ### _string copy_
 ``` c
-p_string pstrcpy(const p_string*);
+p_string p_strcpy(const p_string*);
 ```
 Creates duplicate copy of p_string and returns
 
 ### _string to p_string_
 ``` c
-p_string* toP_string(const char *);
+p_string* p_string(const char *);
 ```
 Converts `\0` terminated string to p_string
 
 ### _p_string to string_
 ``` c
-char* toString(p_string*);
+char* to_string(p_string*);
 ```
 Converts to p_string to `'\0'` terminated string
