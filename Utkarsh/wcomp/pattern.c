@@ -2,49 +2,33 @@
 #include <stdlib.h>
 #include <string.h>
 #include "pattern.h"
-#include "strict.h"
+#include "link.h"
 
-char **pattern_match(char *filename, char *word)
+struct Node *pattern_match(char *filename, char *word)
 {
     FILE *file;
-    int i = 0;
     file = fopen(filename, "r");
     if (file == NULL)
     {
         printf("error in loading database file");
         exit(0);
     }
-    // total line in file
-    int no_of_line = countLine(filename);
-    char **match_strings = malloc(sizeof(char *)*no_of_line);
+    struct Node *matchList = NULL;// define head of linklist as null...
+    char *line;
+    size_t size =0;
     while (!feof(file))
     {
-
-        //buffer size will be no of character in that line
-        int characters = countCharacter(file);
-        // allocating memory to buffer
-        char *line = malloc(sizeof(char) * (characters + 1));
-        fseek(file, -characters, SEEK_CUR); //set pointer to starting of line
-        fgets(line, characters + 1, file);
+        // read a line
+        getline(&line,&size,file);
         if (strstr(line,word))
         { 
-            match_strings[i] = line;
-            i++;
-            if (i == no_of_line)
-            {
-                free(line);
-                break;
-            }
+             insertEnd(&matchList,line);// add to linklist
+        }
+        else{
+            free(line);
         }
     }
     fclose(file);
-    if (i == 0)
-    {
-        return NULL;
-    }
-    else
-    {
-        return match_strings;
-    }
+    return matchList;
 }
 
