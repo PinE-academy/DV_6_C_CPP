@@ -3,13 +3,15 @@
 #include"pattern.h"
 #include"strict.h"
 #include"fuzzy.h"
-void main(int argc , const char argv[])
+void main(int argc , const char *argv[])
 {
   char *scheme,*word;
   scheme = argv[4];
   word=argv[5];
   FILE *fp;
   fp=fopen("file.txt","r");//confirm file input
+  if(strlen(argv)>0 && strlen(argv)<7 && argv[0]=="wcomp" && argv[1]== "-f" && argv[3]== "-s")
+  {
   if(scheme == "strict")
   {
     strict(fp,word);
@@ -32,5 +34,10 @@ void main(int argc , const char argv[])
       }
     }
     
+  }
+  }
+  else
+  {
+    printf("Wrong Input");
   }
 }
