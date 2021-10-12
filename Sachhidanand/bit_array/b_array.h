@@ -8,5 +8,11 @@ typedef struct
 
 } b_array;
 
+enum b_value {
+    b_false,
+    b_true
+};
+
 b_array *b_create(size_t );
 void b_destroy(b_array *);
+enum b_value b_get(const b_array *, size_t );
