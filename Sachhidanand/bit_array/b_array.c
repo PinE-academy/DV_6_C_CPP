@@ -6,6 +6,8 @@
 
 #define Pos(bit)      ((bit) % 8)
 
+#define Bit_In_char(bit)    (1 << Pos(bit))
+
 b_array *b_create(size_t size){
 
     b_array *arr;
@@ -84,4 +86,29 @@ enum b_value b_get(const b_array *arr, size_t size)
     else  
         return b_false; 
         
+}
+
+void b_set(b_array *arr, size_t size,enum b_value a){
+    
+    if(arr==NULL)
+    {
+        printf("\nCan't Set bit in empty array.");
+        return 0;
+    }
+
+    if(size > arr->size)
+    {
+        printf("\nOut of range");
+        exit(1);
+    }
+    
+    if(!a)
+    {
+        arr->array[Index(size)] |= Bit_In_char(size);
+    }
+    
+    else 
+        printf("\nAlready a set bit");
+
+    printf("\nChanged: %d",b_get(arr,size));
 }
