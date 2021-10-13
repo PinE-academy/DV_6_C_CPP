@@ -33,7 +33,7 @@ b_array *b_create(const unsigned int size)
             free(arr);
             arr = NULL;
         }
-
+            memset(arr->array, 0 , ((size/8)+1)); // giving initial values of 0
         return arr;
     }
 }
