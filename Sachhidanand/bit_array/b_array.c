@@ -102,13 +102,7 @@ void b_set(b_array *arr, size_t size,enum b_value a){
         exit(1);
     }
     
-    if(!a)
-    {
-        arr->array[Index(size)] |= Bit_In_char(size);
-    }
-    
-    else 
-        printf("\nAlready a set bit");
+    arr->array[Index(size)] = ((arr->array[Index(size)] & ~Bit_In_char(size) | (a << Pos(size))));
 
     printf("\nChanged: %d",b_get(arr,size));
 }
