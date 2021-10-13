@@ -3,6 +3,7 @@
 #include "pattern.h"
 #include "strict.h"
 #include "fuzzy.h"
+#include "linklist.h"
 
 int main(int argc, char *argv[])
 {
@@ -17,17 +18,20 @@ int main(int argc, char *argv[])
             if (!(strcmp(argv[5],"strict")))
             {
                 // call to strict
-                strict_match(filename,word);
+                struct Node *match_strings=strict_match(filename,word);
+                printlink(match_strings);
             }
             else if (!(strcmp(argv[5],"pattern")))
             {
                 // call to pattern
-                pattern_match(filename,word);
+                struct Node *match_strings=pattern_match(filename,word);
+                printlink(match_strings);
             }
             else if (!(strcmp(argv[5],"fuzzy")))
             {
                 //call to fuzzy
-                fuzzy_match(filename,word);
+                struct Node *match_strings=fuzzy_match(filename,word);
+                printlink(match_strings);
             }
             else
             {
