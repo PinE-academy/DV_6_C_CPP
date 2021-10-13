@@ -3,7 +3,7 @@
 #include<stdlib.h>
 void strict(FILE *f, char *wrd)
 {
-  char str[100],ch;
+  char str[100],*ch;
   win
   if(f==NULL)
     exit(0);
@@ -12,7 +12,9 @@ void strict(FILE *f, char *wrd)
   while(f!=EOF)
   {
     fgets(str,100,f);
-    fscanf(str,%s,
+    fscanf(str,%s,ch);
+    if(
+      
   }
   }
   
