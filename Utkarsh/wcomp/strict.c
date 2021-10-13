@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "strict.h"
-#include "link.h"
+#include "linklist.h"
 
 struct Node *strict_match(char *filename, char *word)
 {
@@ -14,7 +14,7 @@ struct Node *strict_match(char *filename, char *word)
         exit(0);
     }
     struct Node *matchList = NULL;// initalize for every call of function
-    char *line;
+    char *line=NULL;
     size_t size=0;
     while (!feof(file))
     {

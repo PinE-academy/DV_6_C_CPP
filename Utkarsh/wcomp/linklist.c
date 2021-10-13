@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include"link.h"
+#include"linklist.h"
 struct Node{
     char *data;
     struct Node *next;
@@ -42,7 +42,7 @@ void printlink(struct Node *head)
     struct Node *temp = head;
     while (temp != NULL)
     {
-        printf("%s ", temp->data);
+        printf("%s\n", temp->data);
         temp = temp->next;
     }
     printf("\n");

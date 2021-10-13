@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "pattern.h"
-#include "link.h"
+#include "linklist.h"
 
 struct Node *pattern_match(char *filename, char *word)
 {
@@ -14,7 +14,7 @@ struct Node *pattern_match(char *filename, char *word)
         exit(0);
     }
     struct Node *matchList = NULL;// define head of linklist as null...
-    char *line;
+    char *line=NULL;
     size_t size =0;
     while (!feof(file))
     {
