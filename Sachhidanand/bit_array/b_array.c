@@ -71,7 +71,7 @@ enum b_value b_get(const b_array *arr, size_t size)
 {
     if(arr==NULL)
     {
-        printf("Can't find bit in empty array.");
+        printf("Can't find a bit in an empty array.");
         exit(1);
     }   
     
@@ -92,7 +92,7 @@ void b_set(b_array *arr, size_t size,enum b_value a){
     
     if(arr==NULL)
     {
-        printf("\nCan't Set bit in empty array.");
+        printf("\nCan't Set a bit in an empty array.");
         return 0;
     }
 
@@ -105,4 +105,22 @@ void b_set(b_array *arr, size_t size,enum b_value a){
     arr->array[Index(size)] = ((arr->array[Index(size)] & ~Bit_In_char(size) | (a << Pos(size))));
 
     printf("\nChanged: %d",b_get(arr,size));
+}
+
+void b_reset(b_array *arr, size_t size)
+{
+    if(arr==NULL)
+    {
+        printf("Can't Reset a bit in an empty array.");
+        return 0;
+    }
+
+    if(size > arr->size)
+    {
+        printf("Out of range");
+        exit(1);
+    }
+
+    arr->array[Index(size)] &= ~(Bit_In_char(size));
+
 }
