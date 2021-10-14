@@ -124,3 +124,21 @@ void b_reset(b_array *arr, size_t size)
     arr->array[Index(size)] &= ~(Bit_In_char(size));
 
 }
+
+void b_toggle(b_array *arr, size_t size)
+{
+    if(arr==NULL)
+    {
+        printf("Can't Reset a bit in an empty array.");
+        return 0;
+    }
+
+    if(size > arr->size)
+    {
+        printf("Out of range");
+        exit(1);
+    }
+
+    arr->array[Index(size)] ^= (Bit_In_char(size));
+
+}
