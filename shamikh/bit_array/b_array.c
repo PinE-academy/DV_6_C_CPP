@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include "b_array.h"
 
+#define actualBit(bit)    (1 << Pos(bit))
+
+#define actualPos(bit)      ((bit) % 8)
+
+#define actualIndex(bit)    ((bit) / 8)
+
 b_array *b_create(size_t size)
 {
 
@@ -51,3 +57,34 @@ void b_destroy(b_array *arr)
     }
 }
 
+
+
+void b_set(b_array *arr, size_t size,enum b_value a){
+    
+    if(arr==NULL)
+    {
+        printf("\nEmpty array, try later");
+        return 0;
+    }
+  
+    arr->array[actualIndex(size)] = ((arr->array[actualIndex(size)] & ~actualBit(size) | (a << actualPos(size))));
+
+    
+}
+
+enum b_value b_get(const b_array *arr, size_t size)
+{
+    if(arr==NULL)
+    {
+        printf("\nEmpty array, try later");
+        exit(1);
+    }   
+    
+    
+    
+    if(arr->array[actualIndex(size)] & (1 << actualPos(size)))    
+        return b_true;
+    else  
+        return b_false; 
+        
+}
