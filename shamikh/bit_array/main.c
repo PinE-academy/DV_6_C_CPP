@@ -3,7 +3,7 @@
 #include"b_array.h"
 
 int main(){
-    const unsigned int a;
+    size_t a;
     b_array *bit= b_create(a);
 
 
@@ -12,7 +12,7 @@ int main(){
         printf("\n %d", bit->array[i]);
     }
 
-    
+    b_destroy(bit);
      
 
 }

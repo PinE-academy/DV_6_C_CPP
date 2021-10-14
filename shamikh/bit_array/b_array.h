@@ -3,7 +3,7 @@ typedef struct {
     unsigned int size;
 } b_array;
 
-b_array *b_create(const unsigned int );
+b_array *b_create(size_t );
 void b_destroy(b_array *);
 
 

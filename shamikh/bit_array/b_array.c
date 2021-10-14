@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "b_array.h"
 
-b_array *b_create(const unsigned int size)
+b_array *b_create(size_t size)
 {
 
     b_array *arr;
@@ -50,3 +50,4 @@ void b_destroy(b_array *arr)
         free(arr);
     }
 }
+
