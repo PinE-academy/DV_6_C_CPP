@@ -13,23 +13,22 @@ struct Node *strict_match(char *filename, char *word)
         printf("error in loading database file");
         exit(0);
     }
-    struct Node *matchList = NULL;// initalize for every call of function
-    char *line=NULL;
-    size_t size=0;
+    struct Node *matchList = NULL; // initalize for every call of function
+    char *line = NULL;
+    size_t size = 0;
     while (!feof(file))
     {
-        char *match = malloc(sizeof(char) * (strlen(word) + 1));
-        fgets(match, strlen(word) + 1, file);
-        fseek(file, -strlen(match), SEEK_CUR);
-
         //read the unitl new line character
-        getline(&line,&size,file);
-
+        getline(&line, &size, file);
+        // allocate memory for begining word of line
+        char *match = malloc(sizeof(char) * (strlen(word) + 1));
+        strncpy(match, line, strlen(word));
         if (!strcmp(match, word))
-        {   
-            insertEnd(&matchList,line); //add to the linkedlist
+        {
+            insertEnd(&matchList, line); //add to the linkedlist
         }
-        else{
+        else
+        {
             free(line);
         }
         free(match);
@@ -38,4 +37,3 @@ struct Node *strict_match(char *filename, char *word)
     fclose(file);
     return matchList;
 }
-
