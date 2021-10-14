@@ -1,1 +1,1 @@
-void (FILE *f, Char *word);
+void strict (FILE *f, char word);
