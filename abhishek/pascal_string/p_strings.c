@@ -26,3 +26,9 @@ struct p_strings * p_create(size_t p_size){
     
 };
 //#endif
+void p_destroy(struct p_strings *dynamic)
+{
+    free(dynamic->str);
+    free(dynamic);
+}
+

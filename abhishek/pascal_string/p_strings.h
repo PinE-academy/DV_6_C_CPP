@@ -6,3 +6,4 @@ struct p_strings
     char *str;
 };
 struct p_strings * p_create(size_t);
+void p_destroy(struct p_strings*);
