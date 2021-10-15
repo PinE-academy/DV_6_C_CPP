@@ -142,3 +142,28 @@ void b_toggle(b_array *arr, size_t size)
     arr->array[Index(size)] ^= (Bit_In_char(size));
 
 }
+
+size_t b_size(b_array *arr)
+{
+    if(arr==NULL)
+    {
+        printf("Empty array!!");
+        return 0;
+    }
+
+    return arr->size;
+}
+
+b_array b_copy(b_array *arr)
+{
+    if(arr==NULL)
+    {
+        printf("Empty array!!");
+        exit(1);
+    }
+
+    b_array *dest=b_create(arr->size);   
+
+    memcpy((dest->array), (arr->array), ((arr->size/8)+1));
+    
+}
