@@ -12,7 +12,7 @@ void pattern(FILE *f, char *word)
     {
     fscanf(line,"%s",ch);
   
-    if(*ch== *word)
+    if(strcmp(*ch,*word)==0)
     {
       printf("%s\n",line);
     }

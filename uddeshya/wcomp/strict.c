@@ -10,7 +10,7 @@ void strict(FILE *f, char *word)
     getline(&line,&size,f);
     fscanf(line,"%s",ch);
   
-    if(*ch== *word)
+    if(strcmp(*ch,*word)==0)
     {
       printf("%s\n",line);
     }
