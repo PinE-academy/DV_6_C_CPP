@@ -23,6 +23,7 @@ void main(int argc , const char *argv[])
      {
        strict(fp,word);
      }
+     
      else
      {
       if(scheme=="pattern")
@@ -35,6 +36,7 @@ void main(int argc , const char *argv[])
         {
           fuzzy(fp,word);
         }
+        
         else
         {
           printf("Wrong scheme");
@@ -42,10 +44,12 @@ void main(int argc , const char *argv[])
       }
      }
    }
+   
    else
    {
      printf("Wrong Input");
    }
+   
    fclose(fp); 
   } 
 }

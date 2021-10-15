@@ -3,17 +3,20 @@
 #include<stdlib.h>
 void strict(FILE *f, char *word)
 {
-  char str[100],*ch;
+  char *line,*ch;
+  size_t size=0;
   while(f!=EOF)
   {
-    getline();
+    getline(&line,&size,f);
+    fscanf(line,"%s",ch);
   
     if(*ch== *word)
     {
-      printf("%s\n",str);
+      printf("%s\n",line);
     }
       
   }
+  return 0;
   
   
 }
