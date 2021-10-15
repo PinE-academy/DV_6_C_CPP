@@ -20,10 +20,7 @@ struct Node *strict_match(char *filename, char *word)
     {
         //read the unitl new line character
         getline(&line, &size, file);
-        // allocate memory for begining word of line
-        char *match = malloc(sizeof(char) * (strlen(word) + 1));
-        strncpy(match, line, strlen(word));
-        if (!strcmp(match, word))
+        if ((strncmp(line, word,strlen(word)))==0)
         {
             insertEnd(&matchList, line); //add to the linkedlist
         }
@@ -31,7 +28,6 @@ struct Node *strict_match(char *filename, char *word)
         {
             free(line);
         }
-        free(match);
     }
 
     fclose(file);
