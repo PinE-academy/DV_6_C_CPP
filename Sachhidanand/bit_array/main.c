@@ -10,14 +10,34 @@ size_t h=24;
 
     for (size_t i = 0; i <(h/8); i++)   //To see the initial value.
     {
-        printf("%d\n",b->array[i]);
+        printf("\n%d",b->array[i]);
     }
-   
+    
+    printf("\n");
 
     for (size_t i = 0; i <(h/8); i++)
     {
-        printf("%d ",b->array[i]=63*(i+1));
+        printf("\t%d",b->array[i]=i+1);
     }
     
+    size_t c=10;
+
+    printf("\nBefore using any function: %d",b_get(b,c)); 
+       
+    b_set(b,c,b_true);
+    
+    printf("\nAfter using Set function: %d",b_get(b,c));
+    
+    b_reset(b,c);
+    
+    printf("\nAfter using Reset function: %d",b_get(b,c));
+
+    b_toggle(b,c);
+
+    printf("\nAfter using Toggel function: %d",b_get(b,c));
+
+    printf("\nSize of Arr: %d", b_size(b));
+
+    b_copy(b,c);
 
 }  

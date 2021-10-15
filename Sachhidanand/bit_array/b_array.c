@@ -154,7 +154,7 @@ size_t b_size(b_array *arr)
     return arr->size;
 }
 
-b_array b_copy(b_array *arr)
+b_array b_copy(b_array *arr,size_t a)
 {
     if(arr==NULL)
     {
@@ -165,5 +165,5 @@ b_array b_copy(b_array *arr)
     b_array *dest=b_create(arr->size);   
 
     memcpy((dest->array), (arr->array), ((arr->size/8)+1));
-    
+    printf("\nAfter using Copy function: %d", b_get(dest,a));
 }
