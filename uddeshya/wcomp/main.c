@@ -27,7 +27,7 @@ void main(int argc , const char *argv[])
      {
       if(scheme=="pattern")
       {
-        pattern(*fp,word);
+        pattern(fp,word);
       }  
       else
       {
@@ -45,6 +45,7 @@ void main(int argc , const char *argv[])
    else
    {
      printf("Wrong Input");
-   } 
+   }
+   fclose(fp); 
   } 
 }
