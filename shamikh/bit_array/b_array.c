@@ -2,11 +2,13 @@
 #include <stdlib.h>
 #include "b_array.h"
 
-#define actualBit(bit)    (1 << Pos(bit))
 
-#define actualPos(bit)      ((bit) % 8)
 
-#define actualIndex(bit)    ((bit) / 8)
+#define actualPos(bit) ((bit) % 8)
+
+#define actualBit(bit) (1 << actualPos(bit))
+
+#define actualIndex(bit) ((bit) / 8)
 
 b_array *b_create(size_t size)
 {
@@ -39,7 +41,7 @@ b_array *b_create(size_t size)
             free(arr);
             arr = NULL;
         }
-            memset(arr->array, 0 , ((size/8)+1)); // giving initial values of 0
+        memset(arr->array, 0, ((size / 8) + 1)); // giving initial values of 0
         return arr;
     }
 }
@@ -57,34 +59,41 @@ void b_destroy(b_array *arr)
     }
 }
 
+void b_set(b_array *arr, size_t size, enum b_value a)
+{
 
-
-void b_set(b_array *arr, size_t size,enum b_value a){
-    
-    if(arr==NULL)
+    if (arr == NULL)
     {
         printf("\nEmpty array, try later");
         return 0;
     }
-  
-    arr->array[actualIndex(size)] = ((arr->array[actualIndex(size)] & ~actualBit(size) | (a << actualPos(size))));
 
-    
+    arr->array[actualIndex(size)] = ((arr->array[actualIndex(size)] & ~actualBit(size) | (a << actualPos(size))));
 }
 
 enum b_value b_get(const b_array *arr, size_t size)
 {
-    if(arr==NULL)
+    if (arr == NULL)
     {
         printf("\nEmpty array, try later");
         exit(1);
-    }   
-    
-    
-    
-    if(arr->array[actualIndex(size)] & (1 << actualPos(size)))    
+    }
+
+    if (arr->array[actualIndex(size)] & (1 << actualPos(size)))
         return b_true;
-    else  
-        return b_false; 
-        
+    else
+        return b_false;
+}
+
+void b_reset(b_array *arr, size_t size)
+{
+
+    if (arr == NULL)
+    {
+        printf("\nEmpty array, try later");
+
+        arr->array[actualIndex(size)] &= ~(actualBit(size));
+
+        return 0;
+    }
 }
