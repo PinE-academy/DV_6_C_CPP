@@ -1,9 +1,9 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
-//#include"pattern.h"
+#include"pattern.h"
 #include"strict.h"
-//#include"fuzzy.h"
+#include"fuzzy.h"
 void main(int argc , const char *argv[])
 {
  char *scheme,*word;

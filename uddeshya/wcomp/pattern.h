@@ -1,0 +1,1 @@
+void pattern (FILE *f, char *word);

@@ -1,0 +1,1 @@
+void fuzzy (FILE *f, char *word);
