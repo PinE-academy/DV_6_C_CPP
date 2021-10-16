@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include "b_array.h"
 
-
-
 #define actualPos(bit) ((bit) % 8)
 
 #define actualBit(bit) (1 << actualPos(bit))
@@ -96,4 +94,26 @@ void b_reset(b_array *arr, size_t size)
 
         return 0;
     }
+}
+
+void b_toggle(b_array *arr, size_t size)
+{
+    if (arr == NULL)
+    {
+        printf("\nEmpty array, try later");
+        return 0;
+    }
+
+    arr->array[actualIndex(size)] ^= (actualBit(size));
+}
+
+size_t b_size(b_array *arr)
+{
+    if (arr == NULL)
+    {
+        printf("\nEmpty array, try later");
+        return 0;
+    }
+
+    return arr->size;
 }
