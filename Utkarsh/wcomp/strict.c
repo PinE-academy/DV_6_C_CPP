@@ -4,7 +4,7 @@
 #include "strict.h"
 #include "linklist.h"
 
-struct Node *strict_match(char *filename, char *word)
+struct Node *strict_match(const char *filename, const char *word)
 {
     FILE *file;
     file = fopen(filename, "r");

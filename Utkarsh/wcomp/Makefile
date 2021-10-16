@@ -1,4 +1,3 @@
-// make file
 wcomp:main.o strict.o fuzzy.o pattern.o linklist.o
 	gcc main.o strict.o fuzzy.o pattern.o linklist.o -o wcomp
 

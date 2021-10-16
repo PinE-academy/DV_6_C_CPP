@@ -4,7 +4,7 @@
 #include "fuzzy.h"
 #include "linklist.h"
 
-struct Node *fuzzy_match(char *filename, char *word)
+struct Node *fuzzy_match(const char *filename, const char *word)
 {
     FILE *file;
     file = fopen(filename, "r");

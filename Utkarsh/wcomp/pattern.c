@@ -4,7 +4,7 @@
 #include "pattern.h"
 #include "linklist.h"
 
-struct Node *pattern_match(char *filename, char *word)
+struct Node *pattern_match(const char *filename, const char *word)
 {
     FILE *file;
     file = fopen(filename, "r");

@@ -1,2 +1,2 @@
 // function declearation
-struct Node *pattern_match(char *,char *);
+struct Node *pattern_match(const char *,const char *);
