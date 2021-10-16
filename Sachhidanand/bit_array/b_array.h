@@ -19,4 +19,4 @@ void b_set(b_array *, size_t , enum b_value);
 void b_reset(b_array *, size_t );
 void b_toggle(b_array *, size_t );
 size_t b_size(b_array *);
-b_array b_copy(b_array *,size_t);
+b_array *b_copy(b_array *);
