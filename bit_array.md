@@ -72,6 +72,6 @@ Returns size of the b_array
 
 ### _copy b_array_
 ``` c
-b_array b_copy(const b_array*);
+b_array* b_copy(const b_array*);
 ```
 Creates a copy of the b_array
