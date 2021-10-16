@@ -38,6 +38,6 @@ size_t h=24;
 
     printf("\nSize of Arr: %d", b_size(b));
 
-    b_copy(b,c);
+    b_copy(b,c);    //size argument just to return the value from copied array.
 
 }  

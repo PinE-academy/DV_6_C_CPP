@@ -1,6 +1,5 @@
 //Declaration of functions
 
-// b_create function
 typedef struct 
 {
     unsigned char *array;
