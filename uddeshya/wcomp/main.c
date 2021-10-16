@@ -14,7 +14,10 @@ void main(int argc , const char *argv[])
   
   fp=fopen(argv[2],"r");
   if(fp==NULL)
+  {
+    printf("Error in loding database");
     exit(0);
+  }
   else
   {
    if(strlen(argv)>0 && strlen(argv)<7 && argv[0]=="wcomp" && argv[1]== "-f" && argv[3]== "-s")

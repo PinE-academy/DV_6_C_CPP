@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
+#include"strict.h"
 void strict(FILE *f, char *word)
 {
   char *line,*ch;

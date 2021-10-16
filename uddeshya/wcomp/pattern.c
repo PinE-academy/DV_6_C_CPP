@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
+#include"pattern.h"
 void pattern(FILE *f, char *word)
 {
   char *line,*ch;
@@ -15,6 +16,7 @@ void pattern(FILE *f, char *word)
     if(strcmp(*ch,*word)==0)
     {
       printf("%s\n",line);
+      break;
     }
     }
       
