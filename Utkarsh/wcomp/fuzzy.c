@@ -4,7 +4,6 @@
 #include "fuzzy.h"
 #include "linklist.h"
 
-
 struct Node *fuzzy_match(char *filename, char *word)
 {
     FILE *file;
@@ -30,7 +29,7 @@ struct Node *fuzzy_match(char *filename, char *word)
             //convert char to string
             char w[2] = {"\0"};
             w[0] = *(word + i);
-            char *ptr = strstr(linecopy, w);
+            char *ptr = substring(linecopy, w);
             if (ptr == NULL)
             {
                 break;
@@ -54,4 +53,20 @@ struct Node *fuzzy_match(char *filename, char *word)
     }
     fclose(file);
     return matchList;
+}
+
+char *substring(char *str1, char *str2)
+{
+    while (1)
+    {
+        if (*str1 == '\0')
+        {
+            return NULL;
+        }
+        if (*str1 == *str2)
+        {
+            return str1;
+        }
+        str1++;
+    }
 }
