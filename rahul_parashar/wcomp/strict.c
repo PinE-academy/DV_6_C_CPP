@@ -8,7 +8,7 @@ void strict_search(char *filename, char *str)
 {
     
     FILE *fptr1;
-    fptr1 = fopen("fptr1","w");
+    fptr1 = fopen(filename,"w");
     char s[10],c;
     int len = strlen(str);
     int i = 0;
