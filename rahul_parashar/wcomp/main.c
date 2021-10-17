@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<string.h>
 #include"strict.h"
+#include"fuzzy.h"
+#include"pattern.h"
 
 int main(int argc, char *argv[])
 {
