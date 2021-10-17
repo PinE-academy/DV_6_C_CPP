@@ -14,11 +14,9 @@ glist*new_glist()
 void free_glist(glist*head)
 {
   struct node*temp=head
- while (temp!=null)
- {
-   temp= temp-> next;
-   free(head);
-   head=temp;
- }
-  return head;
+ if(glist->head= null)
+   return
+ 
+ glist->head= temp->next;
+ delete(temp);
 }
