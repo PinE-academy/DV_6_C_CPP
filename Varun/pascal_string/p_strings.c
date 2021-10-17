@@ -18,4 +18,10 @@ struct p_strings *p_create(size_t p_size)
     dynamic->str = charact;
     return dynamic;
 };
+//p_destroy func
+void p_destroy(struct p_strings* dynamic)
+{
+    free(dynamic->str);
+    free(dynamic);
+};
 #endif
