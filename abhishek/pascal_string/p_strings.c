@@ -50,6 +50,27 @@ void p_write(struct p_strings*dynamic,size_t p_in,char p_char)
 
 //p_strlen function
 size_t p_strlen(const struct p_strings*dynamic)
+{   
+    size_t pstr_len = dynamic->size;
+    return pstr_len;
+};
+
+//p_strcmp function
+int p_strcmp(const struct p_strings*p_str1, const struct p_strings *p_str2)
 {
-    return dynamic->size;
+    int cmp_value;
+    if(p_str1->size == p_str2->size)
+    {
+        for(int i=0;i<p_str2->size;i++)
+        {
+
+        }
+    }
+    else if(p_str1->size > p_str2->size)
+        cmp_value = -1;
+    else
+       cmp_value = 1;
+
+    return cmp_value;
+    
 };
