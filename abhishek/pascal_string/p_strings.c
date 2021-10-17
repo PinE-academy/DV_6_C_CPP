@@ -3,32 +3,41 @@
 //#ifndef abc //Header guard/include guard
 //#define abc 
 
-struct p_strings * p_create(size_t p_size){
+//p_create func
+struct p_strings* p_create(size_t p_size){
 
     struct p_strings *dynamic = malloc(sizeof(struct p_strings));
 
     if(dynamic == NULL)
         return NULL;
 
-    char *charact = malloc(p_size);
+    char *character = malloc(p_size);
 
-    if(charact == NULL)
+    if(character == NULL)
     {    
         free(dynamic);
         return NULL;
 
     }
     dynamic->size = p_size;
-    dynamic->str = charact;
+    dynamic->str = character;
 
     
     return dynamic;
     
 };
 //#endif
-void p_destroy(struct p_strings *dynamic)
+
+//p_destroy func
+void p_destroy(struct p_strings* dynamic)
 {
     free(dynamic->str);
     free(dynamic);
-}
+};
 
+//p_read func
+char p_read(const struct  p_strings* dynamic,size_t p_in)
+{
+    char p_char = dynamic->str[p_in];
+    return p_char;
+};
