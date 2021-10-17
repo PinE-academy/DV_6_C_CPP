@@ -11,3 +11,14 @@ glist*new_glist()
   return head;
 }
     
+void free_glist(glist*head)
+{
+  struct node*temp=head
+ while (temp!=null)
+ {
+   temp= temp-> next;
+   free(head);
+   head=temp;
+ }
+  return head;
+}
