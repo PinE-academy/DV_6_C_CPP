@@ -16,33 +16,28 @@ struct Node *fuzzy_match(const char *filename, const char *word)
     struct Node *matchList = NULL; // define head of linklist as null...
     char *line = NULL;
     size_t size = 0;
-    int word_size = strlen(word);
     while (!feof(file))
     {
         // read a line
         getline(&line, &size, file);
-        int i = 0;
+        int match = 0; // to know the all character match
         char *linecopy = line;
         // found match for every character of the word
-        while (word_size != 0)
+        while (*linecopy != '\0')
         {
-            //convert char to string
-            char w[2] = {"\0"};
-            w[0] = *(word + i);
-            char *ptr = substring(linecopy, w);
-            if (ptr == NULL)
+            if (*word == *linecopy)
             {
+                word++;
+            }
+            if (*word == '\0')
+            {
+                match = 1;
                 break;
             }
-            else
-            {
-                word_size--;
-                i++;
-            }
-            linecopy = ptr;
+            linecopy++;
         }
 
-        if (word_size == 0)
+        if (match == 1)
         {
             insertEnd(&matchList, line); // add to linklist
         }
@@ -53,20 +48,4 @@ struct Node *fuzzy_match(const char *filename, const char *word)
     }
     fclose(file);
     return matchList;
-}
-
-char *substring(char *str1, char *str2)
-{
-    while (1)
-    {
-        if (*str1 == '\0')
-        {
-            return NULL;
-        }
-        if (*str1 == *str2)
-        {
-            return str1;
-        }
-        str1++;
-    }
 }
