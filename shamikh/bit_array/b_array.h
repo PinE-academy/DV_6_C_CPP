@@ -15,4 +15,5 @@ enum b_value b_get(const b_array *, size_t );
 void b_reset(b_array*, size_t);
 void b_toggle(b_array *, size_t );
 size_t b_size(b_array *);
+b_array *b_copy(b_array *);
 

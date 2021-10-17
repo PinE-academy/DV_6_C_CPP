@@ -117,3 +117,18 @@ size_t b_size(b_array *arr)
 
     return arr->size;
 }
+
+b_array *b_copy(b_array *arr)
+{
+    if (arr == NULL)
+    {
+        printf("\nEmpty array, try later");
+        exit(1);
+    }
+
+    b_array *copy = b_create(arr->size);
+
+    memcpy((copy->array), (arr->array), ((arr->size / 8) + 1));
+
+    return copy;
+}
