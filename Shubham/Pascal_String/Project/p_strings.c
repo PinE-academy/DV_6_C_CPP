@@ -38,6 +38,16 @@ void p_destroy(struct p_strings *dynamic)
 char p_read(const struct p_strings *dynamic, size_t p_size)
 {
 
+    char p_char= dynamic-> p[p_size];
+    return p_char;
 
+}
+
+            // WRITE P_STRINGS
+
+void p_write(struct p_strings *dynamic, char p)
+{
+    char p_wr[]= dynamic-> gets(p) ;
+    return p_wr ;  
 }
 
