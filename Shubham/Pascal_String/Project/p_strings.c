@@ -7,14 +7,14 @@ struct p_strings *p_create(size_t p_size)
 {
         struct p_strings *memory = malloc(sizeof(struct p_strings));
 
-        if(dynamic==NULL)
+        if(memory==NULL)
         return NULL;
 
         char *character =malloc(p_size);
 
         if (character==NULL)
         {
-            free(dynamic);
+            free(memory);
             return NULL;
         }
 
@@ -28,7 +28,7 @@ struct p_strings *p_create(size_t p_size)
 
 void p_destroy(struct p_strings *memory)
 {
-    free(memory->p);
+    free(memory->c_length);
     free(memory);
 
 }
@@ -38,7 +38,7 @@ void p_destroy(struct p_strings *memory)
 char p_read(const struct p_strings *memory, size_t p_size)
 {
 
-    char p_char= memory-> p[p_size];
+    char p_char= memory-> c_length[p_size];
     return p_char;
 
 }
@@ -52,7 +52,7 @@ void p_write(struct p_strings *memory, size_t p_size, char p)
 }
             // STRING LENGTH P_STRING
 
-size_t p_strlen(const p_string *memory)       
+size_t p_strlen(const struct p_strings *memory)       
 {
     size_t p_length= memory-> length;
     return p_length;
