@@ -53,7 +53,7 @@ size_t p_strlen(const struct p_strings*dynamic)
 {   
     size_t pstr_len = dynamic->size;
     return pstr_len;
-};
+}; 
 
 //p_strcmp function
 int p_strcmp(const struct p_strings*p_str1, const struct p_strings *p_str2)
@@ -63,14 +63,21 @@ int p_strcmp(const struct p_strings*p_str1, const struct p_strings *p_str2)
     {
         for(int i=0;i<p_str2->size;i++)
         {
-
+           if(p_str1->str[i]==p_str2->str[i])
+                cmp_value = cmp_value+1;
+            else if(p_str1->str[i]>p_str2->str[i])
+                cmp_value = -1;
+            else    
+                cmp_value = 1;
+            
         }
+        if(cmp_value == p_str2->size)
+            cmp_value = 0;
     }
-    else if(p_str1->size > p_str2->size)
-        cmp_value = -1;
     else
        cmp_value = 1;
 
     return cmp_value;
     
 };
+
