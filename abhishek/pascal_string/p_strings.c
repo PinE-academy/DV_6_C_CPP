@@ -136,7 +136,7 @@ struct p_strings* p_strcat(struct p_strings* p_str1,const struct p_strings* p_st
     int size = p_str1->size + p_str2->size;
     int i = p_str1->size, j = 0;
     p_str1->size = size;
-    while (i<=size)
+    while (i<=size) 
     {
         p_str1->str[i] = p_str2->str[j];
         i++;
