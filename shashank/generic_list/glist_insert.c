@@ -1,9 +1,22 @@
-void gList_insert(data, size)
+
+#define glist_insert(a,b,c) glist_insert2(a,&b,sizeof(b),c) 
+
+void gList_insert2(Glist *list,void* data,int size,int index)
 {
     int i;
-    for (i=0; i<size; i++)
+
+    void *d = malloc(size);
+    memcpy(d,data,size);
+
+    list->data =d;
+
+    if(index == 0)
+    {
+        //insert at first position
+    }
+    
+    for (i=0; i<index; i++)
     {
         // traversal to the node where data is to be inserted.
     }
-    ->data = data;// put the value in the node.
 }
