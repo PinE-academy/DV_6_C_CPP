@@ -130,25 +130,48 @@ int p_strcmp(const struct p_strings*p_str1, const struct p_strings *p_str2)
 };
 
 //p_strcat function
-struct p_strings* p_strcat(const struct p_strings* p_str1,const struct p_strings* p_str2)
+struct p_strings* p_strcat(struct p_strings* p_str1,const struct p_strings* p_str2)
 {
+    //struct p_strings* p_concat;
+    int size = p_str1->size + p_str2->size;
+    int i = p_str1->size, j = 0;
+    p_str1->size = size;
+    while (i<=size)
+    {
+        p_str1->str[i] = p_str2->str[j];
+        i++;
+        j++;
+    }
 
+    return p_str1;
 };
 
-//p_strcpy
-
-struct p_strings* p_strcpy(const struct p_strings*p_str1)
+//p_strcpy function
+struct p_strings* p_strcpy(const struct p_strings*p_str)
 {
+    struct p_strings* p_copy;
+    for(int i=0 ; i<p_str->size ; i++)
+    {
+        p_copy->str[i] = p_str->str[i];
+    }
 
+    return p_copy;
 };
 
 //string to p_string conversion function
 struct p_strings* p_string(const char *str)
 {
-
+    int str_size=strlen(str);
+    struct p_strings* p_str;
+    p_str->size = str_size-1;
+    for(int i = 0; i < p_str->size; i++)
+    {
+           p_str->str[i] = str[i];
+    }
+    return p_str;
 };
 
-//p_string to string conversion
+//p_string to string conversion function
 char* to_string(struct p_strings* p_str)
 {
     p_str->size+=1;
