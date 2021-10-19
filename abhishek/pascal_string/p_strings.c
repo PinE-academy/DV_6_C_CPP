@@ -55,6 +55,7 @@ size_t p_strlen(const struct p_strings*dynamic)
     return pstr_len;
 }; 
 
+/*
 //p_strcmp function
 int p_strcmp(const struct p_strings*p_str1, const struct p_strings *p_str2)
 {
@@ -102,3 +103,61 @@ int p_strcmp(const struct p_strings*p_str1, const struct p_strings *p_str2)
     
 };
 
+*/
+
+//p_strcmp function
+int p_strcmp(const struct p_strings*p_str1, const struct p_strings *p_str2)
+{
+    int cmp_value=0;
+    for(int i=0;i< p_str1->size; i++)
+    {
+       if(p_str1->size == p_str2->size)
+       {
+          if(p_str1->str[i]==p_str2->str[i])
+                cmp_value = cmp_value+1;
+            else 
+                cmp_value = p_str1->str[i]-p_str2->str[i]; 
+       }
+       else
+       {
+        if(p_str1->str[i] == p_str2->str[i])
+                cmp_value = cmp_value+1;
+            else 
+                cmp_value = p_str2->str[i]-p_str1->str[i];
+        }
+    }
+    return cmp_value;
+};
+
+//p_strcat function
+struct p_strings* p_strcat(const struct p_strings* p_str1,const struct p_strings* p_str2)
+{
+
+};
+
+//p_strcpy
+
+struct p_strings* p_strcpy(const struct p_strings*p_str1)
+{
+
+};
+
+//string to p_string conversion function
+struct p_strings* p_string(const char *str)
+{
+
+};
+
+//p_string to string conversion
+char* to_string(struct p_strings* p_str)
+{
+    p_str->size+=1;
+    char str[p_str->size];
+    p_str->str[p_str->size]='\0';
+    for(int i=0;i<p_str->size;i++)
+    {
+        str[i] = p_str->str[i];
+    }
+    //char *str=p_str->str;
+    return str;
+};

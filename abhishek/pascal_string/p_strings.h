@@ -1,5 +1,6 @@
 #include<stdint.h>
 #include<stdlib.h>
+#include<stdio.h>
 
 //Structure
 struct p_strings
@@ -16,3 +17,10 @@ void p_write(struct p_strings*,size_t,char);
 size_t p_strlen(const struct p_strings*); 
 int p_strcmp(const struct p_strings*,const struct p_strings*);
 struct p_strings* p_strcat(const struct p_strings*,const struct p_strings*);
+struct p_strings* p_strcpy(const struct p_strings*);
+struct p_strings* p_string(const char *);
+char* to_string(struct p_strings*);
+
+
+
+
