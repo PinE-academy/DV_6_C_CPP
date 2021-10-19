@@ -7,7 +7,7 @@ GList* new_gList()
 {
     struct node *head = null;
 	head = (struct GList*)malloc(sizeof(struct GList));
-    head -> data=0;
+    head -> data=null;
     head -> next = null;
     return head;
 
@@ -17,7 +17,7 @@ GList* new_gList()
 void free_gList(GList *head)
 {
 	struct node *temp = head;
-    while (temp != null)
+    while (temp != NULL)
     {
         temp = temp -> next;
         free(head);
@@ -25,3 +25,26 @@ void free_gList(GList *head)
     }
     return head;
 }
+
+
+#define glist_insert(list, data,index) glist_insert2(list, &data, sizeof(data), int index)
+
+void gList_insert2(GList *list, void *data,int data_size, int index)
+{
+    void *d = malloc(data_size);
+    memcpy(d, data, data_size);
+
+    struct node *ptr = head;
+    struct node *ptr2 = malloc(sizeof(struct node));
+    ptr2 -> data = d;
+    ptr2 -> link = NULL;
+
+    index--;
+    while(index != 1)
+    {
+        ptr = ptr -> link;
+        index-- ;
+    }
+}
+
+
