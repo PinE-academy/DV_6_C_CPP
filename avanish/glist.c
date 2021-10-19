@@ -45,6 +45,8 @@ void gList_insert2(GList *list, void *data,int data_size, int index)
         ptr = ptr -> link;
         index-- ;
     }
+    ptr2 -> link = ptr -> link;
+    ptr -> link = ptr2;
 }
 
 
