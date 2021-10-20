@@ -1,5 +1,6 @@
 #include"p_strings.h"
 #include<stdlib.h>
+#include<string.h>
 //#ifndef abc //Header guard/include guard
 //#define abc 
 
@@ -172,7 +173,7 @@ struct p_strings* p_string(const char *str)
 };
 
 //p_string to string conversion function
-char* to_string(struct p_strings* p_str)
+char* string(struct p_strings* p_str)
 {
     p_str->size+=1;
     char str[p_str->size];
@@ -181,6 +182,6 @@ char* to_string(struct p_strings* p_str)
     {
         str[i] = p_str->str[i];
     }
-    //char *str=p_str->str;
-    return str;
+    char *string = str;
+    return string;
 };
