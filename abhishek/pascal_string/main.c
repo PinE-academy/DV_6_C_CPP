@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include"p_strings.h"
+
 int main()
 {
     size_t p_str_size = 4;
@@ -22,10 +23,11 @@ int main()
     p_obj1 = p_strcpy(p_obj);
     p_obj = p_string(str);
     str =string(p_obj);
-    printf("\n%d",p_obj->size);
-    printf("\n%s",p_obj->str);
+    printf("END");
     //p_destroy(p_obj);
 
 
     return 0;
 }
+
+

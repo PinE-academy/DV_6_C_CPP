@@ -1,7 +1,7 @@
 #include<stdint.h>
 #include<stdlib.h>
 #include<stdio.h>
-
+#include<string.h>
 //Structure
 struct p_strings
 {
@@ -20,7 +20,3 @@ struct p_strings* p_strcat(struct p_strings*,const struct p_strings*);
 struct p_strings* p_strcpy(const struct p_strings*);
 struct p_strings* p_string(const char *);
 char* string(struct p_strings*);
-
-
-
-

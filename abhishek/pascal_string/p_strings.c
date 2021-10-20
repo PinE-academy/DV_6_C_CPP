@@ -1,6 +1,7 @@
 #include"p_strings.h"
 #include<stdlib.h>
 #include<string.h>
+
 //#ifndef abc //Header guard/include guard
 //#define abc 
 
@@ -164,7 +165,7 @@ struct p_strings* p_strcpy(const struct p_strings*p_str)
 struct p_strings* p_string(const char *str)
 {
     int str_size=strlen(str);
-    struct p_strings* p_str;
+    struct p_strings* p_str = NULL;
     p_str->size = str_size-1;
     for(int i = 0; i < p_str->size; i++)
     {
@@ -186,3 +187,4 @@ char* string(struct p_strings* p_str)
     char *string = str;
     return string;
 };
+
