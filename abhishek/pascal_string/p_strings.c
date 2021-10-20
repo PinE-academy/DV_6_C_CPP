@@ -150,7 +150,8 @@ struct p_strings* p_strcat(struct p_strings* p_str1,const struct p_strings* p_st
 //p_strcpy function
 struct p_strings* p_strcpy(const struct p_strings*p_str)
 {
-    struct p_strings* p_copy;
+    struct p_strings* p_copy= malloc(sizeof(struct p_strings));
+    p_copy->size=p_str->size;
     for(int i=0 ; i<p_str->size ; i++)
     {
         p_copy->str[i] = p_str->str[i];

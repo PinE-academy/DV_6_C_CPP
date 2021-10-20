@@ -6,7 +6,9 @@ int main()
     struct p_strings *p_obj;
     struct p_strings *p_obj1;
     char *str;
+    printf("start\n");
     p_obj = p_create(p_str_size); //p_create function call
+    printf("pcreate0");
     char main_ch;
     int p_strcmp_value;
     p_str_size = p_strlen(p_obj);
@@ -20,7 +22,8 @@ int main()
     str =string(p_obj);
     printf("\n%d",p_obj->size);
     printf("\n%s",p_obj->str);
-    p_destroy(p_obj);
+    //p_destroy(p_obj);
+
 
     return 0;
 }
