@@ -22,20 +22,20 @@ void main(int argc , const char *argv[])
   {
    if(strlen(argv)>0 && strlen(argv)<7 && argv[0]=="wcomp" && argv[1]== "-f" && argv[3]== "-s")
    {
-     if(scheme == "strict")
+     if(strcmp(scheme,"strict")==0)
      {
        strict(fp,word);
      }
      
      else
      {
-      if(scheme=="pattern")
+      if(strcmp(scheme,"pattern")==0)
       {
         pattern(fp,word);
       }  
       else
       {
-        if(scheme=="fuzzy")
+        if(strcmp(scheme,"fuzzy")==0)
         {
           fuzzy(fp,word);
         }

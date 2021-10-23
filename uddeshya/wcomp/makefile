@@ -1,10 +1,10 @@
-wcomp:main.o strict.o  pattern.o fuzzy.o
-  gcc main.o strict.o pattern.o fuzzy.o  -o wcomp
+wcomp:main.o strict.o pattern.o fuzzy.o
+  gcc main.o strict.o pattern.o fuzzy.o -o wcomp
 main.o:main.c strict.h pattern.h fuzzy.h
-  gcc -c main.c
+  gcc main.c -c
 strict.o:strict.c strict.h
-  gcc -c strict.c
+  gcc strict.c -c
 pattern.o:pattern.c pattern.h
-  gcc -c pattern.c
+  gcc pattern.c -c
 fuzzy.o:fuzzy.c fuzzy.h
-  gcc -c fuzzy.c
+  gcc fuzzy.c -c
