@@ -7,8 +7,8 @@ GList* new_gList()
 {
     struct GList *head = NULL;
 	head = (struct GList*)malloc(sizeof(struct GList));
-    head -> data=null;
-    head -> next = null;
+    head -> data= NULL;
+    head -> next = NULL;
     return head;
 
 }
@@ -53,7 +53,7 @@ void* gList_at(GList * list, size_t index)
 {
     struct GList *ptr = NULL;
     ptr = head;
-    int count = 0;
+    int count = 1;
     while(count != index){
     count ++;
     ptr = ptr -> next;
