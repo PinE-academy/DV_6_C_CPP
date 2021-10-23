@@ -24,7 +24,7 @@ int main()
     p_obj = p_string(str);
     str =string(p_obj);
     printf("END");
-    //p_destroy(p_obj);
+    p_destroy(p_obj);
 
 
     return 0;
