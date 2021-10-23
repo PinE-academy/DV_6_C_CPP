@@ -31,9 +31,9 @@ void strict(FILE *f, char *word)
       else
       {
        lookup_size=strlen(lookup); 
-      temp=realloc(temp,lookup_size*sizeof(int));
+      temp=realloc(temp,lookup_size*sizeof(char));
       *temp= *lookup;
-      lookup=realloc(lookup,(lookup_size+line_size)*sizeof(int));
+      lookup=realloc(lookup,(lookup_size+line_size)*sizeof(char));
       lookup=*temp;
       lookup = *line;
       }
