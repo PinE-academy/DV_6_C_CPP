@@ -1,9 +1,9 @@
 typedef struct {
     void *data;
     struct GList *next;
-} GList;
+}GList;
 
-Glist* new_gList()
+GList* new_gList()
 {
 	struct GList *x = (struct GList*)malloc(sizeof(struct GList));
 	x->data = 0;
@@ -18,7 +18,7 @@ void free_gList(GList *p)
 
 #define glist_insert(a,b,c) glist_insert2(a,&b,sizeof(b),c) 
 
-void gList_insert2(Glist *list,void* data,int size,int index)
+void gList_insert2(GList *list,void* data,int size,int index)
 {
     int i;
 
@@ -30,9 +30,10 @@ void gList_insert2(Glist *list,void* data,int size,int index)
 }
 
 
-void* gList_at(Glist *list,int index)
+void* gList_at(GList *list,int index)
 {
-    Glist *temp = list;
+    int i;
+    GList *temp = list;
     for (i=1; i<index; i++)
     {
         if(temp->next != NULL)
