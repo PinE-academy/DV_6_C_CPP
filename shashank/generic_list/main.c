@@ -33,10 +33,11 @@ void main()
     }
 
     i=0;
+    int q;
     printf("Get the value at the Index : ");
     scanf("%d",&i);
     printf("\n");
 
-    gList_at(head,i);
-
+    q=gList_at(head,i);
+    printf("The value at the Index is: %d",q);
 }
