@@ -55,7 +55,7 @@ int main()
     printf("8");
     str =string(p_obj);
     printf("END");
-    //p_destroy(p_obj);
+    p_destroy(p_obj);
 
 
     return 0;
