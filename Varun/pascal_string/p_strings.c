@@ -99,4 +99,31 @@ struct p_strings* p_strcpy(const struct p_strings*p_str)
 
     return p_copy;
 };
+//string to p_string conversion function
+struct p_strings* p_string(const char *str)
+{
+    int str_size=strlen(str);
+    struct p_strings* p_str = NULL;
+    p_str->size = str_size-1;
+    for(int i = 0; i < p_str->size; i++)
+    {
+           p_str->str[i] = str[i];
+    }
+    return p_str;
+};
+
+//p_string to string conversion function
+char* string(struct p_strings* p_str)
+{
+    p_str->size+=1;
+    char str[p_str->size];
+    p_str->str[p_str->size]='\0';
+    for(int i=0;i<p_str->size;i++)
+    {
+        str[i] = p_str->str[i];
+    }
+    char *string = str;
+    return string;
+};
+
 #endif
