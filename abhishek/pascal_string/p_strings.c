@@ -128,6 +128,11 @@ int p_strcmp(const struct p_strings*p_str1, const struct p_strings *p_str2)
                 cmp_value = p_str2->str[i]-p_str1->str[i];
         }
     }
+    if(cmp_value == p_str1->size)
+        cmp_value = 0;
+    else
+        return cmp_value;
+        
     return cmp_value;
 };
 
