@@ -8,9 +8,9 @@ int main()
     struct p_strings *p_obj1 = NULL;
    // struct p_strings *p_obj2;
     char *str = "Using functions of Header";
-    printf("start\n");
+    printf("started\n");
     p_obj = p_create(p_str_size); //p_create function call
-    printf("pcreate0");
+    printf("Working...");
     char main_ch;
     int p_strcmp_value = 1;
     p_str_size = p_strlen(p_obj);
