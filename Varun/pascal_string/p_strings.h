@@ -1,24 +1,21 @@
 #include<stdint.h>
-struct p_strings //create p_string
+#include<stdlib.h>
+#include<stdio.h>
+#include<string.h>
+//Structure
+struct p_strings
 {
     int size;
     char *str;
-};struct p_strings * p_create(size_t); 
-
-void p_destroy(p_string*); //destroy p_string
-
-char read(const p_string*, size_t); //read p_string
-
-void write(p_string*, char); //write p_string
-
-size_t pstrlen(const p_string *); //string length
-
-int pstrcmp(const p_string *, const p_string *); //string compare
-
-p_string* pstrcat(p_string *, const p_string *); //string concatenation
-
-p_string pstrcpy(const p_string*); //string copy
-
-p_string* toP_string(const char *); //string to p_string
-
-char* toString(p_string*); //p_string to string
+};
+//functions declarations
+struct p_strings* p_create(size_t);
+void p_destroy(struct p_strings*);
+char p_read(const struct p_strings*,size_t);
+void p_write(struct p_strings*,size_t,char);
+size_t p_strlen(const struct p_strings*); 
+int p_strcmp(const struct p_strings*,const struct p_strings*);
+struct p_strings* p_strcat(struct p_strings*,const struct p_strings*);
+struct p_strings* p_strcpy(const struct p_strings*);
+struct p_strings* p_string(const char *);
+char* string(struct p_strings*);
