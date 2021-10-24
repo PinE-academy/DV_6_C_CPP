@@ -40,4 +40,6 @@ void main()
 
     q=gList_at(head,i);
     printf("The value at the Index is: %d",q);
+
+    //run iterator functions
 }
