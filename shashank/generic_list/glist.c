@@ -39,6 +39,6 @@ void* gList_at(Glist *list,int index)
         {
             temp=temp->next;
         }
-        printf("The value at this index is: %d",temp->data);    
+        return temp->data;    
     }
 }
