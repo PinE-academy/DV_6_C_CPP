@@ -1,4 +1,4 @@
-//This is the makefile
+//This is the makefile of bit_array project
   
 final: main.o b_array.o
         gcc main.o b_array.o -o final
