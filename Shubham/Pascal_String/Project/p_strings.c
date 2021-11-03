@@ -121,7 +121,7 @@ struct p_strings p_strcpy(const struct p_strings *ptr)
              p_ptr->c_length[i] = ptr->c_length[i];
           }
 
-    return p_ptr;
+    return *p_ptr;
 };
 
             //string to p_string
