@@ -4,7 +4,7 @@
 #include"pattern.h"
 #include"strict.h"
 #include"fuzzy.h"
-void main(int argc , const char *argv[])
+void main(int argc , char *argv[])
 {
  char *scheme,*word;
   scheme = argv[4];
