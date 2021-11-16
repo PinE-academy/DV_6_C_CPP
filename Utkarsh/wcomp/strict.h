@@ -1,0 +1,1 @@
+struct Node *strict_match(const char *,const char *);
