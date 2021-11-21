@@ -21,6 +21,7 @@ int main()
  pascal_point2 = p_strcpy(pascal_point1);
  pascal_point2 = p_string(string2);
  string2 = string(pascal_point1);
+  p_destroy(pascal_point1);
     printf("FINISH");
 
     return 0;
