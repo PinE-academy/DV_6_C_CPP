@@ -1,5 +1,6 @@
 #include"p_strings.h"
 #include<stdlib.h>
+#include<string.h>
 
                     //CREATE P_STRING
 
@@ -111,7 +112,7 @@ struct p_strings *p_strcat( struct p_strings *ptr_1, const struct p_strings *ptr
 
            //string copy
 
-struct p_strings p_strcpy(const struct p_strings *ptr)
+struct p_strings *p_strcpy(const struct p_strings *ptr)
 {
     struct p_strings *p_ptr= malloc(sizeof(struct p_strings));
     int i;
@@ -121,7 +122,7 @@ struct p_strings p_strcpy(const struct p_strings *ptr)
              p_ptr->c_length[i] = ptr->c_length[i];
           }
 
-    return *p_ptr;
+    return p_ptr;
 };
 
             //string to p_string
