@@ -145,6 +145,6 @@ int main() {
     std::cout << '\n' << "S.no" << '\t' << "Name" << '\t' << "Amount" << '\n' <<  std::endl;
 
 
-    cart.bill();  //Generating the final bill of the product
+    cart.bill();  //Generating the final bill of cart
 
 }
