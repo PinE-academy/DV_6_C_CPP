@@ -18,11 +18,7 @@ class Item{
         this->name=name;
         this->amount=amount;
     }
-    // overload to compare two objects
-    bool operator ==(const Item &item){
-        return (name== item.name && amount==item.amount);
-    }
-
+    
     // getter and setter for data members
 
     string getItemName(){
