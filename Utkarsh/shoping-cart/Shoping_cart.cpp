@@ -139,7 +139,7 @@ class Bucket {
         }
 
     }
-
+    // bill generation
     double generateBill(){
         double bill=0;
         int sr_no=1;
