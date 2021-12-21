@@ -5,7 +5,7 @@
 using namespace std;
 
 //Using item class to make a list of items 
-class Item{
+class ItemCol{
 
     public:
     std::map<std::string, double> item_inf;
@@ -73,7 +73,7 @@ class Item{
 // };
 
 class Shop {
-    Item *ptr;
+ ItemCol *ptr;
     public:
     map<string,int> item_list;
     
@@ -143,7 +143,7 @@ class Shop {
 };
 
 class Bucket{
-    Item *ptr;
+ ItemCol *ptr;
     public:
     std::map<std::string,int> Bucket_item;
     
@@ -161,7 +161,7 @@ class Bucket{
         else 
             cout << '\n' <<itemname << '\t' << "-->>" << "Not available in the shop" << endl;
     }
-    void bill(Item *ptr1){
+    void bill (ItemCol *ptr1){
         double sum=0;
         int i=1;
         auto beg = ptr1->item_inf.begin();
@@ -234,7 +234,7 @@ int main() {
     double b[]={100,20,30};                //Amount array
     int f[]={10,10,10};                  //Quantity array
     
-    Item Item_list;
+ ItemCol Item_list;
   
     Bucket cart;
 
