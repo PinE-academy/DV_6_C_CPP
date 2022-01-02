@@ -67,21 +67,70 @@ class Item{
 
          }
 
+ };
 
 
+ class shop{
+
+     Item *ptr;
+
+     public:
+        map<string, int> item_qua;
+
+        void additem(string name, int quantity){
+
+            auto it = item_qua.find(name);
+            auto beg= item_qua.begin();
+            auto end = item_qua.end();
+
+            if (it == end){
+            
+                item_qua[name]= quantity;
+            }
+            else{
+
+                it->second += quantity;
+            }
+
+           
+        }   
+        
+            
+        
+    void show_item() {
+
+    int i=1;
+    auto beg = item_qua.begin();
+    auto end = item_qua.end();
+
+    std::cout << '\n' <<  "------ List of items in shop ------" << '\n' ; 
+    std::cout << '\n' << "S.no" << '\t' << "Name" << '\t' << "Quantity" << '\n' << std::endl;
+
+         while(beg!=end)
+        {
+        std::cout << i << "." << '\t' << beg->first << '\t' << beg->second << std::endl;
+        beg++;
+        i++;
+            }
+
+    }
+ };
 
 
-
-};
 
 
 int main(){
 
 
        std::string a[]={"Denim","Shirt","cardigan"};  // name of item aded in item class list
-        double costing[]={100,200,300};                         // cost  of ach item added in Item Class list
+        double costing[]={400,200,300};                         // cost  of ach item added in Item Class list
+         int quanAvail[]={50,50,50};                    //Quantity Avialble in shop
+
+
 
     Item item_list;
+    shop Item_shop;
+
 
     int s = sizeof(a)/sizeof(a[0]);
 
@@ -89,8 +138,16 @@ int main(){
     {
         item_list.add_item(a[i], costing[i]);
     }
+
+    for (int  i = 0; i < s; i++)
+    {
+        Item_shop.additem(a[i], quanAvail[i]);
+    }
+    
     
     item_list.show_Item();
+
+    Item_shop.show_item();
 
 
 
