@@ -9,7 +9,7 @@ using namespace std;
 class Item{
 
     public:
-        map<std :: string, double> Item_ava;
+        map<string, double> Item_ava;
 
     public:
 
@@ -52,12 +52,12 @@ class Item{
                 auto beg = Item_ava.begin();
                 auto end = Item_ava.end();
             
-            std :: cout<< '\n' <<"------ List of items ------" << '\n';
-            std::cout << '\n' << "S.no" << '\t' << "Name" << '\t' << "Amount" << '\n' <<  std::endl;
+             cout<< '\n' <<"------ List of items ------" << '\n';
+            cout << '\n' << "S.no" << '\t' << "Name" << '\t' <<'\t' << "Amount" << '\n' <<  endl;
 
             while (beg != end)
             {
-                std::cout << n << "." << '\t' << beg->first  << '\t' << beg->second << std::endl;
+                cout << n << "." << '\t' << beg->first  << '\t' << '\t'<< beg->second << endl;
 
                 n++;    
                 beg++;
@@ -72,7 +72,7 @@ class Item{
 
  class shop{
 
-     Item *ptr;
+    
 
      public:
         map<string, int> item_qua;
@@ -103,12 +103,12 @@ class Item{
     auto beg = item_qua.begin();
     auto end = item_qua.end();
 
-    std::cout << '\n' <<  "------ List of items in shop ------" << '\n' ; 
-    std::cout << '\n' << "S.no" << '\t' << "Name" << '\t' << "Quantity" << '\n' << std::endl;
+    cout << '\n' <<  "------ List of items in shop ------" << '\n' ; 
+    cout << '\n' << "S.no" << '\t' << "Name" << '\t'<<'\t' << "Quantity" << '\n' << endl;
 
          while(beg!=end)
         {
-        std::cout << i << "." << '\t' << beg->first << '\t' << beg->second << std::endl;
+        std::cout << i << "." << '\t' << beg->first << '\t'<<'\t' << beg->second << endl;
         beg++;
         i++;
             }
@@ -122,7 +122,7 @@ class Item{
 int main(){
 
 
-       std::string a[]={"Denim","Shirt","cardigan"};  // name of item aded in item class list
+       string a[]={"Denim","Shirt","Tie"};  // name of item aded in item class list
         double costing[]={400,200,300};                         // cost  of ach item added in Item Class list
          int quanAvail[]={50,50,50};                    //Quantity Avialble in shop
 
