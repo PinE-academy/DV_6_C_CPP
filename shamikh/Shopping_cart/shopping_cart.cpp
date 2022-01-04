@@ -114,10 +114,77 @@ class Item{
             }
 
     }
+
+        string availaibility(string itemName, int quant){
+
+            
+            auto beg= item_qua.begin();
+            auto end = item_qua.end();
+
+            while (beg !=end)
+            {
+                if(beg->first == itemName && beg->second >= quant){
+
+                        beg->second -= quant;
+                        return beg->first;
+
+                }
+                else if(beg->first == itemName && beg->second <= quant){
+                    return "Not enough Quantity";
+                }
+                beg++;
+
+            }
+
+            return " ";
+            
+
+        }
+
  };
 
 
+    class bucket{
 
+        public:
+            map<string, int> item_buck;
+        public:
+            void additem(shop *shopj, string itemName, int quant){
+                string item= shopj->availaibility(itemName, quant);
+
+                if(item== itemName){
+
+                        item_buck[itemName]= quant;
+                }
+
+                  else if(item=="Not enough Quantity"){
+             cout << '\n' <<itemName<< '\t'  << "-->>" <<"NOT enough quantity" ;
+        }
+        else 
+            cout << '\n' <<itemName<< '\t' << "-->>" << "Not available in the shop" << endl;
+    }
+
+            
+            
+     void show_bucket_item(){
+            int i=1;
+    auto beg = item_buck.begin();
+    auto end = item_buck.end();
+    
+    std::cout << '\n' <<"------ List of items in bucket ------" << '\n';
+    std::cout << '\n' << "S.no" << '\t' << "Name" << '\t' << "Quantity" << '\n' <<  std::endl;
+
+         while(beg!=end)
+        {
+        std::cout << i << "." << '\t' << beg->first << '\t' << beg->second << std::endl;
+        beg++;
+        i++;
+            }
+
+    }
+
+
+    };
 
 int main(){
 
