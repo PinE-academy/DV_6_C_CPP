@@ -199,7 +199,7 @@ class Item{
 
             while (beg_bucket!=end_bucket)
             {
-                auto it=ptr1->Item_ava.find(beg_bucket->first); 
+                auto it = ptr1->Item_ava.find(beg_bucket->first); 
 
                  if(it!=end){
                 sum=sum+(it->second*beg_bucket->second);
