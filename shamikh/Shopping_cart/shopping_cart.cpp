@@ -149,7 +149,9 @@ class Item{
         public:
             map<string, int> item_buck;
         public:
-            void additem(shop *shopj, string itemName, int quant){
+
+
+    void additem(shop *shopj, string itemName, int quant){
                 string item= shopj->availaibility(itemName, quant);
 
                 if(item== itemName){
@@ -166,7 +168,7 @@ class Item{
 
             
             
-     void show_bucket_item(){
+    void show_bucket_item(){
             int i=1;
     auto beg = item_buck.begin();
     auto end = item_buck.end();
@@ -183,13 +185,63 @@ class Item{
 
     }
 
+    
+    void bill(Item *ptr1){
+        double sum=0;
+        int i=1;
+        auto beg= ptr1->Item_ava.begin();
+        auto end = ptr1->Item_ava.end();
+        auto beg_bucket= item_buck.begin();
+        auto end_bucket= item_buck.end();
+
+             cout << '\n' <<"------ Final Bill ------" << '\n';
+            cout << '\n' << "S.no" << '\t' << "Name" << '\t' << "Amount" << '\n' << endl;
+
+            while (beg_bucket!=end_bucket)
+            {
+                auto it=ptr1->Item_ava.find(beg_bucket->first); 
+
+                 if(it!=end){
+                sum=sum+(it->second*beg_bucket->second);
+                cout << i << '.' << '\t' << beg_bucket->first << '\t' << (it->second*beg_bucket->second) << '\n';
+                i++;
+            }
+
+            else    
+                cout << "->>>> " << beg_bucket->first << " is not in the Item list!" << '\n';
+                
+            beg_bucket++;
+            }
+            
+
+
+    }
+
+    void remove_item(shop *shopObj, string itemName){
+
+            auto beg= item_buck.begin();
+            auto end = item_buck.end();
+
+            while (beg !=end)
+            {
+                if (beg ->first == itemName)
+                {
+                    item_buck.erase(itemName);
+                    shopObj->additem(itemName, beg->second);
+
+                }
+                beg++;
+            }
+            
+        }
+
 
     };
 
 int main(){
 
 
-       string a[]={"Denim","Shirt","Tie"};  // name of item aded in item class list
+       string a[]={"Denim","Shirt","Tie"};           // name of item aded in item class list
         double costing[]={400,200,300};                         // cost  of ach item added in Item Class list
          int quanAvail[]={50,50,50};                    //Quantity Avialble in shop
 
