@@ -169,7 +169,9 @@ class Item{
             
             
     void show_bucket_item(){
+
             int i=1;
+
     auto beg = item_buck.begin();
     auto end = item_buck.end();
     
@@ -195,6 +197,7 @@ class Item{
         auto end_bucket= item_buck.end();
 
              cout << '\n' <<"------ Final Bill ------" << '\n';
+             
             cout << '\n' << "S.no" << '\t' << "Name" << '\t' << "Amount" << '\n' << endl;
 
             while (beg_bucket!=end_bucket)
@@ -249,7 +252,7 @@ int main(){
 
     Item item_list;
     shop Item_shop;
-
+    bucket Item_buck;
 
     int s = sizeof(a)/sizeof(a[0]);
 
@@ -269,5 +272,19 @@ int main(){
     Item_shop.show_item();
 
 
+    // add item in buckets now
+                                                    
+    Item_buck.additem(&Item_shop, "Denim", 2);
+    Item_buck.additem(&Item_shop, "Tie", 5);
+    Item_buck.additem(&Item_shop, "Shirt", 3);
 
+    Item_buck.show_bucket_item();
+
+    Item_buck.bill(&item_list);
+
+    Item_buck.remove_item(&Item_shop, "Tie");
+
+    Item_buck.show_bucket_item();
+
+    Item_buck.bill(&item_list);
 }
