@@ -25,6 +25,7 @@ int main()
     str =string(p_obj);
     printf("END");
     //p_destroy(p_obj);
+    12
 */
     size_t p_str_size = 4;
     struct p_strings *p_obj = NULL;
